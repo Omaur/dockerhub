@@ -14,7 +14,7 @@ steps:
     containerRegistry: 'dockerhub-connection'
     repository: '$(imageName)'
     command: 'buildAndPush'
-    Dockerfile: 'Omaur/DOCKER'   # correct Dockerfile path
+    Dockerfile: 'Omaur/Dockerfile'   # correct Dockerfile path
     buildContext: 'Omaur'            # folder with app code
     tags: |
       latest
