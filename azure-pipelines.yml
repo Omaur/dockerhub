@@ -19,6 +19,6 @@ steps:
     containerRegistry: 'dockerhub-connection'
     repository: '$(imageName)'
     command: 'buildAndPush'
-    Dockerfile: 'Omaur/dockerhub'
+    Dockerfile: 'Omaur/DOCKER'
     tags: |
       latest
