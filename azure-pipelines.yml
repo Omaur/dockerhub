@@ -4,10 +4,13 @@ trigger:
 pool: Default
 
 variables:
-- group: GitHubSecrets   # name of your variable group
-  imageName: 'omardiablo/auredevops'
-  tag: '$(Build.BuildId)'
-  Build Sources Directory: $(Build.SourcesDirectory)
+- group: GitHubSecrets       # secret variable group
+- name: imageName
+  value: 'omardiablo/auredevops'
+- name: tag
+  value: '$(Build.BuildId)'
+- name: BuildSourcesDirectory
+  value: '$(Build.SourcesDirectory)'
 
 steps:
 
