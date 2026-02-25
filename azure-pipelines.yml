@@ -23,7 +23,6 @@ steps:
     buildContext: '$(Build.SourcesDirectory)'            # Build context = repo root
     tags: |
       latest
-      $(tag)
 
 - script: |
     git config user.name "Omaur"
