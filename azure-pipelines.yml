@@ -6,6 +6,7 @@ pool: Default
 variables:
   imageName: 'omardiablo/auredevops'
   tag: '$(Build.BuildId)'
+  Build Sources Directory: $(Build.SourcesDirectory)
 
 steps:
 
@@ -14,8 +15,8 @@ steps:
     containerRegistry: 'dockerhub-connection'
     repository: '$(imageName)'
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'   # correct Dockerfile path
-    buildContext: ''            # folder with app code
+    Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'   # If Dockerfile is at repo root
+    buildContext: '$(Build.SourcesDirectory)'            # Build context = repo root
     tags: |
       latest
       $(tag)
