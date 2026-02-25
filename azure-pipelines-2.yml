@@ -7,6 +7,15 @@ trigger:
 - main
 pool: Default
 
+variables:
+- group: GitHubSecrets       # secret variable group
+- name: imageName
+  value: 'omardiablo/auredevops'
+- name: tag
+  value: '$(Build.BuildId)'
+- name: BuildSourcesDirectory
+  value: '$(Build.SourcesDirectory)'
+
 steps:
 - checkout: self
   fetchDepth: 0   # optional: full history, needed if pushing
